@@ -7,5 +7,8 @@
     closed_at timestamp 
 );
 
-select count(*) from notes
-drop table notes
+select * from notes 
+
+select count(*) from notes 
+#drop table notes
+#delete from notes
