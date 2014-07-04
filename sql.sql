@@ -8,7 +8,10 @@
 );
 
 select * from notes 
+substring(osm_timestamp from 1 for 4)
+
 
 select count(*) from notes 
+select * from notes
 #drop table notes
 #delete from notes

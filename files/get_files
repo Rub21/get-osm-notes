@@ -1,6 +1,57 @@
 #!/bin/bash
 for i in $(seq $1 $2)
 do	
-	curl -O http://api.openstreetmap.org/api/0.6/notes/${i}.json
+	echo :: ${i}
+	#echo curl -O http://api.openstreetmap.org/api/0.6/notes/`expr $((${i}*100)) + ${i}`.json
+	#curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 1000 + ${i}`.json &
+	#curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 2000 + ${i}`.json &
+	#curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 3000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 4000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 5000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 6000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 7000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 8000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 9000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 10000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 11000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 12000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 13000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 14000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 15000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 16000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 17000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 18000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 19000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 20000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 21000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 22000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 23000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 24000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 25000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 26000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 27000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 28000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 29000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 30000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 31000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 32000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 33000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 34000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 35000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 36000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 37000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 38000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 39000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 40000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 41000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 42000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 43000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 44000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 45000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 46000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 47000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 48000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 49000 + ${i}`.json &
+	curl -O http://api.openstreetmap.org/api/0.6/notes/`expr 50000 + ${i}`.json 
 	#echo http://planet.openstreetmap.org/replication/day/000/000/${i}.osc.gz
 done
