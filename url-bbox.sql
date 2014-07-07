@@ -19,14 +19,38 @@ CREATE TABLE notes (
     closed_at timestamp 
 );
 
-select * from notes 
-substring(osm_timestamp from 1 for 4)
 
+CREATE TABLE notes_detail(
+    id integer NOT NULL,
+    lat decimal NOT NULL,
+    lon decimal NOT NULL,   
+    date_created  timestamp,
+    date_closed  timestamp,
+    status varchar(20),
+    open_user varchar(100),
+    closed_user varchar(100),
+    open_comment text,
+    closed_commet text,
+    time_open integer
+);
+
+
+
+
+
+    
+select * from notes 
 
 select count(*) from notes 
+select count(*) from notes_detail
+
 select * from notes limit 100
-#drop table notes
+#drop table notes_detail
 #delete from notes
+
+
+
+
 ########################################################consultas
 
     select count(*) from notes where status = 'open'
