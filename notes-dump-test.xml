@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<osm version="0.6" generator="planet-notes-dump">
+    <note lat="42.2923896" lon="-73.3349419">
+        <id>1322</id>
+        <date_created>2013-05-03 18:20:53 UTC</date_created>
+        <date_closed>2013-05-25 06:16:28 UTC</date_closed>
+        <comments>
+            <comment>
+                <date>2013-05-03 18:20:53 UTC</date>
+                <action>opened</action>
+                <text>Location is slightly wrong.</text>
+            </comment>
+            <comment>
+                <date>2013-05-11 15:00:14 UTC</date>
+                <uid>596047</uid>
+                <user>Rps333</user>
+                <action>commented</action>
+                <text>what? the buildings look good</text>
+            </comment>
+            <comment>
+                <date>2013-05-25 06:16:28 UTC</date>
+                <uid>67236</uid>
+                <user>jfire</user>
+                <action>closed</action>
+                <text></text>
+            </comment>
+        </comments>
+    </note>
+    <note lat="30.6212576" lon="103.9727211">
+        <id>41</id>
+        <date_created>2013-04-24 09:48:35 UTC</date_created>
+        <date_closed>2013-05-01 12:55:05 UTC</date_closed>
+        <comments>
+            <comment>
+                <date>2013-04-24 09:48:35 UTC</date>
+                <uid>1611</uid>
+                <user>Harry Wood</user>
+                <action>opened</action>
+                <text>Curious gap in the road network in various places like this. I wonder if we should track down who was responsible for deleting chunks of road, and revert their changesets</text>
+            </comment>
+            <comment>
+                <date>2013-05-01 12:55:05 UTC</date>
+                <uid>1611</uid>
+                <user>Harry Wood</user>
+                <action>closed</action>
+                <text>This particular gap has been fixed: http://www.openstreetmap.org/browse/way/181210404 . Thanks pieleric</text>
+            </comment>
+        </comments>
+    </note>
+    <note lat="51.8727551" lon="-1.4804077">
+        <id>49</id>
+        <date_created>2013-04-24 10:31:49 UTC</date_created>
+        <date_closed>2013-04-24 15:08:35 UTC</date_closed>
+        <comments>
+            <comment>
+                <date>2013-04-24 10:31:49 UTC</date>
+                <uid>1295</uid>
+                <user>robert</user>
+                <action>opened</action>
+                <text>Ban potlatch</text>
+            </comment>
+            <comment>
+                <date>2013-04-24 15:08:35 UTC</date>
+                <uid>21931</uid>
+                <user>amm</user>
+                <action>closed</action>
+                <text>Close pointless note</text>
+            </comment>
+        </comments>
+    </note>
+    <note lat="48.1799348" lon="-1.6411903">
+        <id>128966</id>
+        <date_created>2014-03-04 13:29:44 UTC</date_created>
+        <date_closed>2014-03-05 17:52:06 UTC</date_closed>
+        <comments>
+            <comment>
+                <date>2014-03-04 13:29:44 UTC</date>
+                <uid>181804</uid>
+                <user>nbossard</user>
+                <action>opened</action>
+                <text>grillage tout autour des jeux</text>
+            </comment>
+            <comment>
+                <date>2014-03-05 17:52:06 UTC</date>
+                <uid>704348</uid>
+                <user>JBacc1</user>
+                <action>closed</action>
+                <text>ok</text>
+            </comment>
+        </comments>
+    </note>
+    <note lat="47.1672290" lon="11.2171700">
+        <id>96549</id>
+        <date_created>2014-01-05 20:19:01 UTC</date_created>
+        <date_closed>2014-04-11 19:37:06 UTC</date_closed>
+        <comments>
+            <comment>
+                <date>2014-01-05 20:19:01 UTC</date>
+                <action>opened</action>
+                <text>Moved from OSB ID681621: ein weiterer Steig? [simon04, 2012-10-02 15:43:58 CEST]</text>
+            </comment>
+            <comment>
+                <date>2014-04-11 19:37:06 UTC</date>
+                <uid>57945</uid>
+                <user>simon04</user>
+                <action>closed</action>
+                <text>×</text>
+            </comment>
+        </comments>
+    </note>
+    <note lat="51.9456802" lon="11.4312100">
+        <id>39746</id>
+        <date_created>2013-09-10 16:11:31 UTC</date_created>
+        <date_closed>2013-09-15 02:59:15 UTC</date_closed>
+        <comments>
+            <comment>
+                <date>2013-09-10 16:11:31 UTC</date>
+                <action>opened</action>
+                <text>Discothek Wilde Zicke Egeln</text>
+            </comment>
+            <comment>
+                <date>2013-09-15 02:59:15 UTC</date>
+                <uid>15398</uid>
+                <user>mappy123</user>
+                <action>closed</action>
+            </comment>
+        </comments>
+    </note>
+    <note lat="36.7232991" lon="68.8641500">
+        <id>4</id>
+        <date_created>2013-04-24 08:07:02 UTC</date_created>
+        <date_closed>2013-04-24 08:08:51 UTC</date_closed>
+        <comments>
+            <comment>
+                <date>2013-04-24 08:07:02 UTC</date>
+                <uid>1626</uid>
+                <user>FredB</user>
+                <action>opened</action>
+                <text>test</text>
+            </comment>
+            <comment>
+                <date>2013-04-24 08:08:51 UTC</date>
+                <uid>1626</uid>
+                <user>FredB</user>
+                <action>closed</action>
+                <text></text>
+            </comment>
+        </comments>
+    </note>
+    <note lat="50.0664885" lon="8.2481360">
+        <id>27</id>
+        <date_created>2013-04-24 08:49:32 UTC</date_created>
+        <date_closed>2013-04-24 16:22:48 UTC</date_closed>
+        <comments>
+            <comment>
+                <date>2013-04-24 08:49:32 UTC</date>
+                <action>opened</action>
+                <text>Doppelte Information? Einmal 60/40 reicht, oder?</text>
+            </comment>
+            <comment>
+                <date>2013-04-24 16:22:48 UTC</date>
+                <uid>184969</uid>
+                <user>EvanE</user>
+                <action>closed</action>
+                <text>Bitte genau hinsehen. Einmal Kneipe und einmal Biergarten, getrennt durch einen öffentlichen Weg. Das passt schon so.</text>
+            </comment>
+        </comments>
+    </note>
+    <note lat="51.5154997" lon="-0.1617265">
+        <id>123</id>
+        <date_created>2013-04-24 16:30:25 UTC</date_created>
+        <date_closed>2013-04-25 01:48:00 UTC</date_closed>
+        <comments>
+            <comment>
+                <date>2013-04-24 16:30:25 UTC</date>
+                <action>opened</action>
+                <text>West London Synagogue, 33 Seymour Place, London, W1H 5AU</text>
+            </comment>
+            <comment>
+                <date>2013-04-25 01:48:00 UTC</date>
+                <uid>3560</uid>
+                <user>Firefishy</user>
+                <action>closed</action>
+                <text>Thank you. Added the address details.</text>
+            </comment>
+        </comments>
+    </note>
+    <note lat="-3.3280144" lon="-79.8111248">
+        <id>17859</id>
+        <date_created>2013-07-27 01:13:06 UTC</date_created>
+        <comments>
+            <comment>
+                <date>2013-07-27 01:13:06 UTC</date>
+                <action>opened</action>
+                <text>.</text>
+            </comment>
+        </comments>
+    </note>
+    <note lat="43.4719296" lon="-88.8145634">
+        <id>33801</id>
+        <date_created>2013-08-30 01:11:10 UTC</date_created>
+        <comments>
+            <comment>
+                <date>2013-08-30 01:11:10 UTC</date>
+                <action>opened</action>
+                <text>Wyllow Pet Hospital 126 Corporate Dr Beaver Dam WI 53916 920.885.4148
+                </text>
+            </comment>
+        </comments>
+    </note>
+    <note lat="51.9421551" lon="11.4263391">
+        <id>39765</id>
+        <date_created>2013-09-10 16:27:49 UTC</date_created>
+        <date_closed>2013-09-15 03:00:22 UTC</date_closed>
+        <comments>
+            <comment>
+                <date>2013-09-10 16:27:49 UTC</date>
+                <action>opened</action>
+                <text>Edeka Getränkemarkt</text>
+            </comment>
+            <comment>
+                <date>2013-09-15 03:00:22 UTC</date>
+                <uid>15398</uid>
+                <user>mappy123</user>
+                <action>closed</action>
+                <text>ist auch eingetragen</text>
+            </comment>
+        </comments>
+    </note>
+    <note lat="37.8875429" lon="-122.3004431">
+        <id>492</id>
+        <date_created>2013-04-28 11:05:02 UTC</date_created>
+        <comments>
+            <comment>
+                <date>2013-04-28 11:05:03 UTC</date>
+                <action>opened</action>
+                <text>There's a bike path under construction along the south side of Buchanan</text>
+            </comment>
+            <comment>
+                <date>2013-09-02 23:26:50 UTC</date>
+                <uid>153669</uid>
+                <user>dchiles</user>
+                <action>commented</action>
+                <text>added portion but some still under construction</text>
+            </comment>
+        </comments>
+    </note>
+</osm>
