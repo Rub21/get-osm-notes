@@ -43,6 +43,7 @@ select * from notes
 
 select count(*) from notes 
 select count(*) from notes_detail
+select * from notes_detail
 
 select * from notes limit 100
 #drop table notes_detail
@@ -51,18 +52,16 @@ select * from notes limit 100
 
 
 
-########################################################consultas
 
-    select count(*) from notes where status = 'open'
-    select count(*) from notes where status = 'closed'
 
-    select count(*) from grid4
 
-#created:
- SELECT count(*), substr(created_at::text, 0, 8) as month  FROM notes    group by  month order by month;
 
-#OPEN
-    SELECT count(*), substr(created_at::text, 0, 8) as month  FROM notes  where status = 'open' group by  month order by month;
 
-#CLOSE
-    SELECT count(*), substr(created_at::text, 0, 8) as month  FROM notes  where status = 'closed' group by  month order by month;
+
+
+
+
+
+
+
+    
