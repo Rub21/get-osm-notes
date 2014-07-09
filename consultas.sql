@@ -159,95 +159,11 @@ select  id, open_comment from notes_detail where status='open'  order by date_cr
 
 
 
-COPY (select  id, open_comment from notes_detail where status='open'  order by date_created ASC) TO '/home/ruben/data/open-notes.csv' (format csv, delimiter '|')
+COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', open_comment from notes_detail where status='open'  order by date_created ASC) TO '/home/ruben/data/open-notes.csv' (format csv, delimiter '|')
 
 
 
 
-
-#un usario abiro cantidad de notas en un mes y cuantas a cerrado
-
-
-CREATE OR REPLACE FUNCTION notes_closed_user_month(c_user varchar(100), month varchar(50))
-RETURNS  int
-AS $$
-DECLARE
-	BEGIN
-		RETURN( SELECT count(*) from notes_detail  where notes_detail.closed_user = c_user and status = 'closed' and substr(notes_detail.date_created::text, 0, 8) =month);
-	END;
-$$ LANGUAGE plpgsql;
-
-select notes_closed_user_month('Marcussacapuces91' , '2013-12')
-
-CREATE OR REPLACE FUNCTION notes_open_closed_user( c_user varchar(100),month varchar(50))
-RETURNS  varchar(100)
-AS $$
-DECLARE
-	_open integer;
-	_closed integer;
-	BEGIN
-		_open= ( SELECT count(*) from notes_detail  where notes_detail.open_user = c_user  and substr(notes_detail.date_created::text, 0, 8) = month);
-		_closed= ( SELECT count(*) from notes_detail  where notes_detail.closed_user = c_user  and substr(notes_detail.date_created::text, 0, 8) = month);
-
-		return _open || '\' || _closed;
-	END;
-$$ LANGUAGE plpgsql;
-
-
-2013-04 | 101
-2013-05 | 352
-2013-06 | 216
-2013-07 | 241
-2013-08 | 446
-2013-09 | 789
-2013-10 | 671
-2013-11 | 488
-2013-12 | 303
-2014-01 | 458
-2014-02 | 501
-2014-03 | 305
-2014-04 | 297
-2014-05 | 302
-2014-06 | 315
-2014-07 | 27
-
-select notes_open_closed_user('Rub21_nycbuildings' , '2014-04')
-
-select closed_user ,notes_open_closed_user(closed_user , '2013-04') from notes_detail group by  closed_user
-
-
-
-SELECT open_user, count( closed_user) as num_notes  from notes_detail  where time_open < 60 and  status = 'closed'  group by  open_user order by num_notes DESC;
-
-SELECT count(*) from notes_detail  where closed_user = 'Marcussacapuces91' and status = 'closed' and substr(date_created::text, 0, 8) = '2013-12'
-
-
-select closed_user, notes_closed_user_month(closed_user, '2013-12') as num_notes  from notes_detail group by  closed_user order by num_notes DESC;
-
-
-
-
-
-
-
-#numero de notas por usuario en un mes:
-
-SELECT open_user, count(*) as num_notes from notes_detail where substr(date_created::text, 0, 8) = '2013-05' group by  open_user order by num_notes DESC 
-SELECT closed_user, count(*) as num_notes from notes_detail where substr(date_created::text, 0, 8) = '2013-05' and status= 'closed' group by  closed_user order by num_notes DESC 
-
-
-
-
-
-
-
-
-
-
-
-#Nodos que fueron eliminados en menos de un hora
-SELECT count(*) from notes_detail  where time_open < 3600
-SELECT * from notes_detail  where time_open <3600
 
 
 
