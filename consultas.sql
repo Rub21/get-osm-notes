@@ -256,6 +256,17 @@ UPDATE notes set is_restaurant=true where verifica_comentario(open_comment,'rest
 
 
 
+# HAYANDO TEST
+
+ALTER TABLE notes ADD COLUMN is_test boolean  
+UPDATE notes set is_test=false
+
+-- actualiza todos los comentario con bancos
+UPDATE notes set is_test=true where verifica_comentario(open_comment,'test')>0 or verifica_comentario(open_comment,'prueba')>0
+
+
+
+
 
 
 
@@ -332,6 +343,25 @@ select * from notes_detail limit 100
 COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' ) from notes_detail where status='open' and is_restaurant=true  order by date_created ASC) TO '/home/ruben/data/notes_restaurants.md' (format csv, delimiter '|')
 
 
+
+#update notes_detail with notes "TEST"
+
+
+ALTER TABLE notes_detail ADD COLUMN is_restaurant boolean  
+UPDATE notes_detail set is_restaurant=false
+
+
+--select count(*) from notes_detail where is_restaurant=true
+
+
+UPDATE notes_detail
+SET is_restaurant = notes.is_restaurant
+FROM notes
+WHERE notes.id = notes_detail.id
+
+select * from notes_detail limit 100
+
+COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' ) from notes_detail where status='open' and is_restaurant=true  order by date_created ASC) TO '/home/ruben/data/notes_restaurants.md' (format csv, delimiter '|')
 
 
 
