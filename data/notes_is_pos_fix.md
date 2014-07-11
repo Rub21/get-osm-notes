@@ -1,6 +1,5 @@
 **ID** | **Commnet**
 ---------|--------------
-[28](http://www.openstreetmap.org/note/28#map=19/52.2405466/0.7737315) | Anglia Yacht Brokerage Unit 12a, Maxwell Road, Rougham Industrial Estate. Bury St Edmunds, Suffolk. IP30 9ND
 [77](http://www.openstreetmap.org/note/77#map=19/51.5115603/-0.1421142) | Building outlines look crap here
 [78](http://www.openstreetmap.org/note/78#map=19/52.9073168/-2.4716341) | Canal & River Trust facilities block hereabouts
 [80](http://www.openstreetmap.org/note/80#map=19/0.2451317/119.7801590) | The most pants coastline in the world

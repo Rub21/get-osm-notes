@@ -372,6 +372,18 @@ COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat
 
 
 
+#notes Direcion:
 
-          
+ALTER TABLE notes_detail ADD COLUMN is_direction boolean  
+UPDATE notes_detail set is_direction=false
+
+
+
+UPDATE notes_detail set is_direction=true where substr(open_comment,0,3)='R.' or substr(open_comment,0,4)='TV.' or  substr(lower(open_comment),0,4)='av.'
+
+select * from notes_detail where substr(open_comment,0,4)='TV.'
+select * from notes_detail where substr(lower(open_comment),0,4)='av.'
+
+
+
 
