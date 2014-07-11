@@ -270,6 +270,7 @@ FROM notes
 WHERE notes.id = notes_detail.id
 
 --select count(*) from notes_detail where is_pos_fix=true
+COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' ) from notes_detail where status='open' and is_pos_fix=true  order by date_created ASC) TO '/home/ruben/data/notes_is_pos_fix.md' (format csv, delimiter '|')
 
 
 #update notes_detail with notes "is_hotel"
@@ -286,6 +287,8 @@ FROM notes
 WHERE notes.id = notes_detail.id
 
 
+
+COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' ) from notes_detail where status='open' and is_hotel=true  order by date_created ASC) TO '/home/ruben/data/notes_hotel.md' (format csv, delimiter '|')
 #update notes_detail with notes "is_bank"
 
 
@@ -302,6 +305,10 @@ FROM notes
 WHERE notes.id = notes_detail.id
 
 select * from notes_detail limit 100
+
+COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' ) from notes_detail where status='open' and is_bank=true  order by date_created ASC) TO '/home/ruben/data/notes_bank.md' (format csv, delimiter '|')
+
+
 
 
 
@@ -321,6 +328,8 @@ FROM notes
 WHERE notes.id = notes_detail.id
 
 select * from notes_detail limit 100
+
+COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' ) from notes_detail where status='open' and is_restaurant=true  order by date_created ASC) TO '/home/ruben/data/notes_restaurants.md' (format csv, delimiter '|')
 
 
 
