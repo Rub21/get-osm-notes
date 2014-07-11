@@ -266,7 +266,12 @@ UPDATE notes set is_test=true where verifica_comentario(open_comment,'test')>0 o
 
 
 
+#bus stop
 
+ALTER TABLE notes ADD COLUMN is_bus_stop boolean  
+UPDATE notes set is_bus_stop=false
+
+UPDATE notes set is_bus_stop=true where (verifica_comentario(open_comment,'bus stop')>0 or verifica_comentario(open_comment,'bus')>0)and length(open_comment)< 30
 
 
 
@@ -364,13 +369,13 @@ select * from notes_detail limit 100
 COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' ) from notes_detail where status='open' and is_test=true  order by date_created ASC) TO '/home/ruben/data/notes_test.md' (format csv, delimiter '|')
 
 
-
+--select count(*) from notes_detail where is_test=true
 
 #tipo "Moved from OSB ID:
 
 COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' ) from notes_detail where status='open' and verifica_comentario(open_comment,'moved from osb')>0  order by date_created ASC) TO '/home/ruben/data/moved_from_osb_id.md' (format csv, delimiter '|')
 
-
+select * from notes_detail where status='open' and verifica_comentario(open_comment,'moved from osb')>0 
 
 #notes Direcion:
 
@@ -384,6 +389,55 @@ UPDATE notes_detail set is_direction=true where substr(open_comment,0,3)='R.' or
 select * from notes_detail where substr(open_comment,0,4)='TV.'
 select * from notes_detail where substr(lower(open_comment),0,4)='av.'
 
+#### coments with bounds :
+
+COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' ) from notes_detail where status='open' and verifica_comentario(open_comment,'bounds:')>0   order by date_created ASC) TO '/home/ruben/data/bounds.md' (format csv, delimiter '|')
+
+select * from notes_detail where status='open' and verifica_comentario(open_comment,'bounds:')>0 
 
 
+####Parking
 
+select * from notes_detail where status='open' and verifica_comentario(open_comment,'parking')>0 and length(open_comment)< 30
+
+COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' )
+ from notes_detail where status='open' and verifica_comentario(open_comment,'parking')>0 and length(open_comment)< 30  order by date_created ASC) TO '/home/ruben/data/parking.md' (format csv, delimiter '|')
+
+# otras notas sin sentido como here, casa aqui, 
+
+select * from notes_detail where status='open' 
+and( verifica_comentario(open_comment,'here')>0 
+or verifica_comentario(open_comment,'casa')>0 
+or verifica_comentario(open_comment,'home')>0
+or  verifica_comentario(open_comment,'aqui')>0 
+or  verifica_comentario(open_comment,'ok')>0  )
+and length(open_comment)< 10
+
+COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' )
+ from notes_detail where status='open' 
+and( verifica_comentario(open_comment,'here')>0 
+or verifica_comentario(open_comment,'casa')>0 
+or verifica_comentario(open_comment,'home')>0
+or  verifica_comentario(open_comment,'aqui')>0 
+or  verifica_comentario(open_comment,'ok')>0  )
+and length(open_comment)< 10
+   order by date_created ASC) TO '/home/ruben/data/casa_here.md' (format csv, delimiter '|')
+
+
+##bus stop
+
+
+ALTER TABLE notes ADD COLUMN is_bus_stop boolean  
+UPDATE notes set is_bus_stop=false
+
+
+--select count(*) from notes_detail where is_restaurant=true
+
+
+UPDATE notes_detail
+SET is_test = notes.is_test
+FROM notes
+WHERE notes.id = notes_detail.id
+
+
+select * from notes_detail where status='open' and (verifica_comentario(open_comment,'bus stop')>0 or verifica_comentario(open_comment,'bus')>0)and length(open_comment)< 30
