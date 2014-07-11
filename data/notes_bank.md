@@ -1,7 +1,6 @@
 **ID** | **Commnet**
 ---------|--------------
 [23899](http://www.openstreetmap.org/note/23899#map=19/51.4003436/-1.3230157) | This bank has closed and the cash machine is no longer here.
-[24187](http://www.openstreetmap.org/note/24187#map=19/28.4975854/83.6512756) | Tatopani is one of the village of Bhurung Tatopani Village Development Committee (VDC). This VDC is located in Myagdi District, Dhaulagiri Zone of Western Developmental region (WDR) of Nepal. This VDC consiste of 9 administrative wards. Villages / hamlets are Thak Tatopani bazaar, Kote Sango, Nauni bagar, Bhurung, Madal Dhunga, Kimla Kharka etc. This VDC is a popular tourist destination with hotsprings, orange orchards and Tatopani bazaar with Ilaka level Health post & high school. There is also a Nilgiri Financial Cooperative, Post office, Red Cross and police station. As mapping is a basic tool for any kind developmental planning, this VDC is also in need of a good map, which can be especially used for disaster preparedness and re - forestration activities which this VDC badly need. As I would like to strerss, since this village is in the lap of hills and on the bank of fierce river, kali Gandaki, we have seen many floods and landslides because of which many people have lost thier lives, land and have been displaced. Therefore, I would like to request all whoever come across this map, please contribute in whatever capacity to map it to its detail. Thank you
 [27350](http://www.openstreetmap.org/note/27350#map=19/29.8909598/-90.0693512) | Westbank
 [41170](http://www.openstreetmap.org/note/41170#map=19/36.3106642/-95.6133592) | RCB Bank, 300 West Patti Page Boulevard, Claremore, Oklahoma 74017
 [41516](http://www.openstreetmap.org/note/41516#map=19/49.0277318/20.5894411) | Cash point - Unicredita Bank
@@ -24,7 +23,6 @@
 [110236](http://www.openstreetmap.org/note/110236#map=19/31.5314701/35.1152819) | Bank Leumi
 [112723](http://www.openstreetmap.org/note/112723#map=19/-5.1557172/119.4160894) | BANK MUAMALAT CAB MAKASSAR
 [114943](http://www.openstreetmap.org/note/114943#map=19/30.4126252/-87.2168357) | 4 banks
-[119736](http://www.openstreetmap.org/note/119736#map=19/-29.9345750/-51.2672496) | Como corrigir a topologia dos rios aqui, de forma que o Caí conecte com o Jacuí?  Traçar os vários ramos Jacuí? Outra possibilidade é usar uma relação waterway (http://wiki.osm.org/wiki/Relation:waterway) que possui um role=side_stream (mas qual é considerado o ramo principal?). Além disso, eu sugeriria remover todas as anotações (nome internacional, wikipedia, navegabilidade) dos riverbanks e passá-las para o respectivo waterway=river, mantendo apenas name=*, waterway=riverbank na orla
 [120253](http://www.openstreetmap.org/note/120253#map=19/27.7695477/-15.5472923) | banco
 [121007](http://www.openstreetmap.org/note/121007#map=19/14.5625076/120.9901464) | BPI Branch (Bank)
 [126088](http://www.openstreetmap.org/note/126088#map=19/14.5845491/-90.5215175) | inter Banco
