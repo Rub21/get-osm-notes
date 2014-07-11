@@ -347,24 +347,28 @@ COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat
 #update notes_detail with notes "TEST"
 
 
-ALTER TABLE notes_detail ADD COLUMN is_restaurant boolean  
-UPDATE notes_detail set is_restaurant=false
+ALTER TABLE notes_detail ADD COLUMN is_test boolean  
+UPDATE notes_detail set is_test=false
 
 
 --select count(*) from notes_detail where is_restaurant=true
 
 
 UPDATE notes_detail
-SET is_restaurant = notes.is_restaurant
+SET is_test = notes.is_test
 FROM notes
 WHERE notes.id = notes_detail.id
 
 select * from notes_detail limit 100
 
-COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' ) from notes_detail where status='open' and is_restaurant=true  order by date_created ASC) TO '/home/ruben/data/notes_restaurants.md' (format csv, delimiter '|')
+COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' ) from notes_detail where status='open' and is_test=true  order by date_created ASC) TO '/home/ruben/data/notes_test.md' (format csv, delimiter '|')
 
 
 
+
+#tipo "Moved from OSB ID:
+
+COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' ) from notes_detail where status='open' and verifica_comentario(open_comment,'moved from osb')>0  order by date_created ASC) TO '/home/ruben/data/moved_from_osb_id.md' (format csv, delimiter '|')
 
 
 
