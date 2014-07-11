@@ -1,7 +1,7 @@
 **check**|**ID** | **Commnet**
 ---------|---------|--------------
-- [ ] | [1794](http://www.openstreetmap.org/note/1794#map=19/12.7979548/99.9717182) | Cha Am Bus station
-- [ ] | [4527](http://www.openstreetmap.org/note/4527#map=19/64.0919513/-21.8581688) | check bus stop position
+- [ ] de | [1794](http://www.openstreetmap.org/note/1794#map=19/12.7979548/99.9717182) | Cha Am Bus station
+- [ ] de | [4527](http://www.openstreetmap.org/note/4527#map=19/64.0919513/-21.8581688) | check bus stop position
 - [ ] | [17182](http://www.openstreetmap.org/note/17182#map=19/60.2089888/25.8576322) | Bus stop
 - [ ] | [17183](http://www.openstreetmap.org/note/17183#map=19/60.2087915/25.8591557) | Bus stop
 - [ ] | [17730](http://www.openstreetmap.org/note/17730#map=19/-36.4265356/-71.9488782) | Terminal de Buses
