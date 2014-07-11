@@ -159,11 +159,176 @@ select  id, open_comment from notes_detail where status='open'  order by date_cr
 
 
 
-COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', open_comment from notes_detail where status='open'  order by date_created ASC) TO '/home/ruben/data/open-notes.csv' (format csv, delimiter '|')
+
+
+
+select regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' ) from notes_detail limit 100
+select open_comment from notes_detail limit 100
+
+
+
+COPY (select '[',id,'](http://www.openstreetmap.org/note/|', id, '#map=19/|',lat,'/|',lon ,')', regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' ) from notes_detail where status='open'  order by date_created ASC) TO '/home/ruben/data/open-notes.csv' (format csv, delimiter '|')
+
+
+#ALTER TABLE notes_detail DROP COLUMN fix
+ALTER TABLE notes_detail ADD COLUMN is_pos_fix boolean  
+
+select * from notes_detail limit 100
+UPDATE notes_detail set is_pos_fix=false
+
+ALTER TABLE notes_detail drop COLUMN geo
+
+#ALTER TABLE notes_detail ADD COLUMN geo geometry  
+
+UPDATE notes_detail set geo='POINT('|| lon || ' ' || lat|| ')'
+
+select * from notes_detail where id= 77
+
+
+## CLONAR LA TABLA notes_detail A UN notes
+
+#DROP TABLE notes;
+
+  CREATE TABLE notes (LIKE notes_detail INCLUDING INDEXES);  
+
+    INSERT INTO notes
+         SELECT *
+           FROM notes_detail
+           WHERE status='open'
+
+           select * from notes limit 100;
+=========================================================================================================
+#actulizamos todos los comentarios
+
+UPDATE notes set  open_comment= regexp_replace(open_comment, E'[\\n\\r]+', ' ', 'g' )
+
+
+=============================================================================================================
+
+select * from notes limit 100
+
+#Toda la revision de las notas que ueden ser arregladas
+select  id, open_comment from notes where is_pos_fix=true 
+
+
+# FUNCION QUE VA A FERIFICAR SI HAY UN PALABRA EN EL COMENTARIO
+CREATE OR REPLACE FUNCTION verifica_comentario(_comment text, _p varchar(100))
+RETURNS  int
+AS $$
+DECLARE
+	BEGIN
+		RETURN(SELECT character_length((regexp_matches(lower(_comment), '('|| _p ||')'))[1]));
+	END;
+$$ LANGUAGE plpgsql;
+
+--select verifica_comentario('Hotel & Restaurant - Strandhaus am Inselsee','hotel')
+
+# HAYANDO HOTELES
+--agregamos la comuna para verificar si es un hotel
+
+ALTER TABLE notes ADD COLUMN is_hotel boolean  
+UPDATE notes set is_hotel=false
+-- actualiza todos los comentario con hoteles
+UPDATE notes set is_hotel=true where verifica_comentario(open_comment,'hotel')>0
+
+select id, open_comment from notes where is_hotel=true
+
+--select  id, open_comment,character_length((regexp_matches(lower(open_comment), '(hotel)'))[1]) from notes
+
+# HAYANDO BANCOS OR BANK
+
+ALTER TABLE notes ADD COLUMN is_bank boolean  
+UPDATE notes set is_bank=false
+
+-- actualiza todos los comentario con bancos
+UPDATE notes set is_bank=true where verifica_comentario(open_comment,'banco')>0 or verifica_comentario(open_comment,'bank')>0 
+
+
+
+# HAYANDO RESTAURANT
+
+ALTER TABLE notes ADD COLUMN is_restaurant boolean  
+UPDATE notes set is_restaurant=false
+
+-- actualiza todos los comentario con bancos
+UPDATE notes set is_restaurant=true where verifica_comentario(open_comment,'restaurant')>0 or verifica_comentario(open_comment,'restaurante')>0  or verifica_comentario(open_comment,'restaurace')>0 
 
 
 
 
 
 
+
+=======================================================NOTES DETAIL====================================================
+#Agregamos todos los puntos a notes_detail
+
+
+#update notes_detail with notes "is_pos_fix"
+UPDATE notes_detail
+SET is_pos_fix = notes.is_pos_fix
+FROM notes
+WHERE notes.id = notes_detail.id
+
+--select count(*) from notes_detail where is_pos_fix=true
+
+
+#update notes_detail with notes "is_hotel"
+
+
+ALTER TABLE notes_detail ADD COLUMN is_hotel boolean  
+UPDATE notes_detail set is_hotel=false
+
+--select count(*) from notes_detail where is_hotel=true
+
+UPDATE notes_detail
+SET is_hotel = notes.is_hotel
+FROM notes
+WHERE notes.id = notes_detail.id
+
+
+#update notes_detail with notes "is_bank"
+
+
+ALTER TABLE notes_detail ADD COLUMN is_bank boolean  
+UPDATE notes_detail set is_bank=false
+
+
+--select count(*) from notes_detail where is_bank=true
+
+
+UPDATE notes_detail
+SET is_bank = notes.is_bank
+FROM notes
+WHERE notes.id = notes_detail.id
+
+select * from notes_detail limit 100
+
+
+
+#update notes_detail with notes "is_bank"
+
+
+ALTER TABLE notes_detail ADD COLUMN is_restaurant boolean  
+UPDATE notes_detail set is_restaurant=false
+
+
+--select count(*) from notes_detail where is_restaurant=true
+
+
+UPDATE notes_detail
+SET is_restaurant = notes.is_restaurant
+FROM notes
+WHERE notes.id = notes_detail.id
+
+select * from notes_detail limit 100
+
+
+
+
+
+
+
+
+
+          
 
